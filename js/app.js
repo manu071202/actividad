@@ -1,5 +1,6 @@
 import Persona from "./classPersona.js"
-
+import {cantidadDeCaracteres} from "./helpers.js"
+import {validarNumeros} from "./helpers"
 let nombre = document.getElementById("nombre");
 let edad = document.getElementById("edad");
 let dni = document.getElementById("dni");
@@ -14,7 +15,8 @@ let btnmostrarGeneracion = document.querySelector("#mostrarGeneracion");
 
 
 formulario.addEventListener("submit", crearPersona);
-
+nombre.addEventListener("blur", ()=>{cantidadDeCaracteres(nombre)})
+edad.addEventListener("blur", ()=>{validarNumeros(edad)})
 function crearPersona(e) {
   e.preventDefault();
 
@@ -30,6 +32,7 @@ function crearPersona(e) {
       altura.value,
       anio.value
     );
+    console.log(nuevaPersona);
     //reseteo los datos del formulario 
     formGeneraciones.reset();
     // mostramos opciones para la persona creada
