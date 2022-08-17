@@ -20,3 +20,16 @@ export function validarNumeros(input){
     }
 
 }
+
+export function validarDni(input){
+    //validar con expresiones regulares
+    let patron = /^[\d]{1,2}[\d]{6}$/
+
+    if(patron.test(input.value)){
+        input.className = "form-control is-valid"
+    }else{
+        input.className = "form-control is-invalid"
+    }
+}
+
+//^[\d]{1,3}(\,[\d]{1,2})?$
