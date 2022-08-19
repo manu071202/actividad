@@ -2,6 +2,9 @@ import Persona from "./classPersona.js"
 import {cantidadDeCaracteres} from "./helpers.js"
 import {validarNumeros} from "./helpers.js"
 import {validarDni} from "./helpers.js"
+import {ValidarPeso} from "./helpers.js"
+import {ValidarAltura} from "./helpers.js"
+import {ValidarAnioNaciemto} from "./helpers.js"
 
 let nombre = document.getElementById("nombre");
 let edad = document.getElementById("edad");
@@ -20,6 +23,9 @@ formulario.addEventListener("submit", crearPersona);
 nombre.addEventListener("blur", ()=>{cantidadDeCaracteres(nombre)})
 edad.addEventListener("blur", ()=>{validarNumeros(edad)})
 dni.addEventListener("blur", ()=>{validarDni(dni)})
+peso.addEventListener("blur", ()=>{ValidarPeso(peso)})
+altura.addEventListener("blur", ()=>{ValidarAltura(altura)})
+anio.addEventListener("blur", ()=>{ValidarAnioNaciemto(anio)})
 function crearPersona(e) {
   e.preventDefault();
 

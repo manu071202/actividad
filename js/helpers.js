@@ -32,4 +32,36 @@ export function validarDni(input){
     }
 }
 
-//^[\d]{1,3}(\,[\d]{1,2})?$
+export function ValidarPeso(input){
+    //validar peso
+    let patron = /^[\d]{1,3}(\,[\d]{1,2})?$/
+  
+    if(patron.test(input.value)){
+        input.className = "form-control is-valid"
+    }else{
+        input.className = "form-control is-invalid"
+    }
+}
+
+export function ValidarAltura(input){
+    //validar peso
+    let patron = /^[\d]{0,1}(\,[\d]{1,2})$/
+  
+    if(patron.test(input.value)){
+        input.className = "form-control is-valid"
+    }else{
+        input.className = "form-control is-invalid"
+    }
+}
+
+
+export function ValidarAnioNaciemto(input){
+    //validar fecha
+    let patron = /^[\d]{1,4}$/
+  
+    if( patron.test(input.value) && patron < 1930 ){
+        input.className = "form-control is-valid"
+    }else{
+        input.className = "form-control is-invalid"
+    }
+}
