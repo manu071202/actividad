@@ -58,8 +58,8 @@ export function ValidarAltura(input){
 export function ValidarAnioNaciemto(input){
     //validar fecha
     let patron = /^[\d]{1,4}$/
-  
-    if( patron.test(input.value) && patron < 1930 ){
+  console.log(input.value)
+    if( patron.test(input.value) && input.value >= 1930 ){
         input.className = "form-control is-valid"
     }else{
         input.className = "form-control is-invalid"
